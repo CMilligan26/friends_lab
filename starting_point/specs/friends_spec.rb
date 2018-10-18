@@ -143,16 +143,33 @@ def test_sum_of_all_friends_money
   assert_equal(143,result)
 end
 
-
+# def test_sum_of_all_friends_money_2
+#   result = sum_of_all_friends_money(@people)
+#   assert_equal(2,result)
+# end
 
   # 7. For two given people, allow the first person to loan a given value of money to the other
   # (hint: our function will probably need 3 arguments passed to it... the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed, maybe two assertions?)
 
+def test_money_from_friend3_to_friend4
+  result = money_lending(@person3, @person4, 20)
+  assert_equal([40,0], result)
+end
+
+def test_money_from_friend5_to_friend1
+  result = money_lending(@person5, @person1, 15)
+  assert_equal([16,85], result)
+end
+
 
   # 8. Find the set of everyone's favourite food joined together
-  # (hint: concatenate the favourites/snack arrays together)
+  # (hint: concatenate the favourites/snack arrays together)(.concat)
 
+def test_join_all_friends_favourite_food_together
+    result = join_food(@people)
+    assert_equal(["charcuterie", "soup", "bread", "Scooby snacks", "spaghetti", "ratatouille", "spinach"],result)
+end
 
   # 9. Find people with no friends
   # (hint: return an array, there might be more people in the future with no friends!)
